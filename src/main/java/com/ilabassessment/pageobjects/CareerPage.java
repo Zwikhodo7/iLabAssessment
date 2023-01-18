@@ -1,5 +1,6 @@
 package com.ilabassessment.pageobjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,10 +35,22 @@ public class CareerPage extends BaseClass{
 		PageFactory.initElements(getDriver(), this);
 	}
 	
+	public void scrolldown() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,250)", "");
+	}
+	
 	public void clickSouthAfrica() throws InterruptedException {
-		//Action.scrollByVisibilityOfElement(getDriver(),SouthAfrica);
-		Thread.sleep(10000);
+		Action.scrollByVisibilityOfElement(getDriver(),SouthAfrica);
+		scrolldown();
+		scrolldown();
 		Action.click(getDriver(), SouthAfrica);
+	}
+	
+	public void clickSQALead() throws InterruptedException {
+		Thread.sleep(5000);
+		Action.scrollByVisibilityOfElement(getDriver(),SQALead);
+		Action.click(getDriver(), SQALead);
 	}
 	
 	public void inputName(String FirstName)throws Throwable {
