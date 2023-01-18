@@ -14,7 +14,6 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.ilabassessment.base.BaseClass;
-import com.ilabassessment.pageobjects.LoginPage;
 
 /**
  * @author znemadodzi

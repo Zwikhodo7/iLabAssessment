@@ -12,6 +12,7 @@
           <include name="loadConfig"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="navigateToCareer"/>
           <include name="completeForm"/>
           <include name="afterSuite"/>
         </methods>
