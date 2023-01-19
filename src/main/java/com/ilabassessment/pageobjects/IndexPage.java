@@ -24,7 +24,10 @@ public class IndexPage extends BaseClass {
 
 	@FindBy(xpath = "//a[.='Career Opportunities']")
 	WebElement CareerOpportunities;
-
+	
+	@FindBy(xpath = "//button[@class='cky-btn cky-btn-reject']")
+	WebElement rejectCookies;
+	
 	public IndexPage() {
 		PageFactory.initElements(getDriver(), this);
 	}
@@ -37,5 +40,9 @@ public class IndexPage extends BaseClass {
 	public CareerPage clickCareerOpportunities() {
 		Action.click(getDriver(), CareerOpportunities);
 		return new CareerPage();
+	}
+	
+	public void clickrejectCookies() {
+		Action.click(getDriver(), rejectCookies);  
 	}
 }

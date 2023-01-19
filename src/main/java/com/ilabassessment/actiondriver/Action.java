@@ -39,10 +39,16 @@ public class Action extends BaseClass{
 
 		Actions act = new Actions(driver);
 		act.moveToElement(ele).click().build().perform();
-		System.out.print("click is pefromed");
+		System.out.print(ele+ "was clicked");
 
 	}
+	
+	public static void clickElement(WebElement ele, String text) {
+		ele.click();
+		System.out.print(ele+ "was clicked");
 
+	}
+ 
 
 	public static boolean findElement(WebDriver driver, WebElement ele) {
 		boolean flag = false;
@@ -128,7 +134,7 @@ public class Action extends BaseClass{
 			flag = ele.isDisplayed();
 			ele.clear();
 			ele.sendKeys(text);
-			// logger.info("Entered text :"+text);
+			//logger.info("Entered text :"+text);
 			flag = true;
 		} catch (Exception e) {
 			System.out.println("Location Not found");
@@ -142,6 +148,13 @@ public class Action extends BaseClass{
 
 		}
 		return flag;
+	}
+	
+	public static void sendKeys(WebElement ele, String text) {
+	getDriver().manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	        ele.click();
+			ele.sendKeys(text);
+			//logger.info("Entered text :"+text)
 	}
 
 
@@ -292,6 +305,8 @@ public class Action extends BaseClass{
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", ele);
 			// driver.executeAsyncScript("arguments[0].click();", element);
+			System.out.println(ele+" was clicked Action is performed");
+
 
 			flag = true;
 
@@ -337,7 +352,7 @@ public class Action extends BaseClass{
 	 * 
 	 */
 
-	public boolean switchToFrameById(WebDriver driver,String idValue) {
+	public static boolean switchToFrameById(WebDriver driver,String idValue) {
 		boolean flag = false;
 		try {
 			driver.switchTo().frame(idValue);

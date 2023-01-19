@@ -37,28 +37,32 @@ public class CareerPage extends BaseClass{
 	
 	public void scrolldown() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,250)", "");
+		js.executeScript("arguments[0].scrollIntoView(true);",SouthAfrica);
+		}
+	
+	public void clickSouthAfrica() {
+		Action.JSClick(getDriver(), SouthAfrica);  
 	}
 	
-	public void clickSouthAfrica() throws InterruptedException {
-		Action.scrollByVisibilityOfElement(getDriver(),SouthAfrica);
-		scrolldown();
-		scrolldown();
-		Action.click(getDriver(), SouthAfrica);
+	public void clickSQALead(){
+		Action.JSClick(getDriver(),SQALead);
 	}
 	
-	public void clickSQALead() throws InterruptedException {
-		Thread.sleep(5000);
-		Action.scrollByVisibilityOfElement(getDriver(),SQALead);
-		Action.click(getDriver(), SQALead);
-	}
-	
-	public void inputName(String FirstName)throws Throwable {
-		Action.type(FirstNameField, FirstName);
+	public void inputName(String FirstNames)throws Throwable {
+	//	Action.scrollByVisibilityOfElement(getDriver(), FirstNameField);
+		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
+		//Action.JSClick(getDriver(),FirstNameField);
+		Action.type(FirstNameField,FirstNames);
+		getDriver().switchTo().defaultContent();
+
+
 	}
 	
 	public void inputEmailAddress(String EmailAddress)throws Throwable {
+		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
 		Action.type(EmailField, EmailAddress);
+		getDriver().switchTo().defaultContent();
+
 	}
 	
 	public void inputCellNumber(String EmailAddress)throws Throwable {

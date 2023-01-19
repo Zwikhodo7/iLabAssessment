@@ -7,9 +7,8 @@
         <methods>
           <include name="loadConfig"/>
           <include name="setup"/>
+          <include name="CompleteForm"/>
           <include name="tearDown"/>
-          <include name="navigateToCareer"/>
-          <include name="completeForm"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- com.ilabassessment.testcases.CareerJourneyTest -->

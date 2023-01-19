@@ -87,10 +87,10 @@ public class BaseClass {
 
 		//Maximize the screen
 		getDriver().manage().window().maximize();
-		Action.implicitWait(getDriver(),30);
-		Action.pageLoadTimeOut(getDriver(), 30);
+		Action.implicitWait(getDriver(),90);
+		Action.pageLoadTimeOut(getDriver(), 90);
 		getDriver().get(prop.getProperty("url"));
-		
+		getDriver().manage().deleteAllCookies();
 
 //		//Delete all the cookies
 //		getDriver().manage().deleteAllCookies();
