@@ -19,7 +19,6 @@
 			<class name="com.ilabassessment.testcases.CareerJourneyTest" />
 		</classes>
 	</test> 
-	
 	<test name="IETest">
 		<parameter name="browser" value="IE"></parameter>
 		<classes>
