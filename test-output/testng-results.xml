@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-19T05:58:36 SAST" name="Suite" finished-at="2023-01-19T06:00:15 SAST" duration-ms="98588">
+  <suite started-at="2023-01-29T23:12:13 SAST" name="Suite" finished-at="2023-01-29T23:15:32 SAST" duration-ms="199044">
     <groups>
     </groups>
-    <test started-at="2023-01-19T05:58:36 SAST" name="ChromeTest" finished-at="2023-01-19T06:00:15 SAST" duration-ms="98588">
+    <test started-at="2023-01-29T23:12:13 SAST" name="ChromeTest" finished-at="2023-01-29T23:15:32 SAST" duration-ms="199044">
       <class name="com.ilabassessment.testcases.CareerJourneyTest">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@71ba6d4e]" started-at="2023-01-19T05:58:36 SAST" name="loadConfig" finished-at="2023-01-19T05:58:36 SAST" duration-ms="232" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:12:13 SAST" name="loadConfig" finished-at="2023-01-29T23:12:13 SAST" duration-ms="234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@71ba6d4e]" started-at="2023-01-19T05:58:37 SAST" name="setup" finished-at="2023-01-19T05:58:52 SAST" duration-ms="15254" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:12:13 SAST" name="setup" finished-at="2023-01-29T23:13:28 SAST" duration-ms="74811" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CompleteForm(java.lang.String,java.lang.String)[pri:3, instance:com.ilabassessment.testcases.CareerJourneyTest@71ba6d4e]" started-at="2023-01-19T05:58:54 SAST" name="CompleteForm" data-provider="Sheet1" finished-at="2023-01-19T06:00:14 SAST" duration-ms="80877" status="PASS">
+        <test-method signature="navigateToCareer()[pri:1, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:13:28 SAST" name="navigateToCareer" finished-at="2023-01-29T23:14:09 SAST" duration-ms="40680" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCareer -->
+        <test-method signature="navigateToJobPost()[pri:2, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:14:09 SAST" name="navigateToJobPost" finished-at="2023-01-29T23:14:28 SAST" duration-ms="19083" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToJobPost -->
+        <test-method signature="CompleteForm(java.lang.String,java.lang.String)[pri:3, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:14:29 SAST" name="CompleteForm" data-provider="Sheet1" finished-at="2023-01-29T23:15:32 SAST" duration-ms="62392" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,11 +46,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CompleteForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@71ba6d4e]" started-at="2023-01-19T06:00:15 SAST" name="tearDown" finished-at="2023-01-19T06:00:15 SAST" duration-ms="409" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:15:32 SAST" name="tearDown" finished-at="2023-01-29T23:15:32 SAST" duration-ms="308" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@71ba6d4e]" started-at="2023-01-19T06:00:16 SAST" name="afterSuite" finished-at="2023-01-19T06:00:16 SAST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.ilabassessment.testcases.CareerJourneyTest@3c77d488]" started-at="2023-01-29T23:15:32 SAST" name="afterSuite" finished-at="2023-01-29T23:15:32 SAST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

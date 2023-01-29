@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.ilabassessment.actiondriver.Action;
 import com.ilabassessment.base.BaseClass;
 
@@ -19,16 +20,16 @@ public class CareerPage extends BaseClass{
 	@FindBy(xpath="//input[@name='firstname']")
 	private WebElement FirstNameField;
 
-	@FindBy(name="//input[@name='email']")
+	@FindBy(xpath="//input[@id='email-91269253-d0ea-4409-a821-873cda679554']")
 	private WebElement EmailField;
 	
-	@FindBy(name="//input[@name='phone']")
+	@FindBy(xpath="//input[@name='phone']")
 	private WebElement PhoneField;
 	
-	@FindBy(name="//label[@class='hs-error-msg']")
+	@FindBy(xpath="//label[@class='hs-error-msg']")
 	private WebElement ErrorMessage;
 	
-	@FindBy(name="//input[@class='hs-button primary large']")
+	@FindBy(xpath="//input[@class='hs-button primary large']")
 	private WebElement SubmitButton;
 	
 	public CareerPage() {
@@ -41,40 +42,49 @@ public class CareerPage extends BaseClass{
 		}
 	
 	public void clickSouthAfrica() {
-		Action.JSClick(getDriver(), SouthAfrica);  
+		Action.JSClick(getDriver(), SouthAfrica, "South Africa");  
 	}
 	
 	public void clickSQALead(){
-		Action.JSClick(getDriver(),SQALead);
+		
+		Action.clickElement(SQALead, "SQALead");
 	}
 	
 	public void inputName(String FirstNames)throws Throwable {
 	//	Action.scrollByVisibilityOfElement(getDriver(), FirstNameField);
 		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
-		//Action.JSClick(getDriver(),FirstNameField);
 		Action.type(FirstNameField,FirstNames);
 		getDriver().switchTo().defaultContent();
-
-
+		
 	}
 	
 	public void inputEmailAddress(String EmailAddress)throws Throwable {
 		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
 		Action.type(EmailField, EmailAddress);
 		getDriver().switchTo().defaultContent();
-
 	}
 	
-	public void inputCellNumber(String EmailAddress)throws Throwable {
-		//Action.type(EmailField, EmailAddress);
-		//You need to randomize
+	public void inputCellNumber()throws Throwable {
+		
+			double r = Math.random()*1000000000+1;
+			int x = (int)r;
+			Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
+			Action.type(PhoneField, "0"+x);
+			test.log(Status.PASS, "0"+x+" was generated");
+			System.out.print("0"+x +"was generated");
+			getDriver().switchTo().defaultContent();
 	}
 	
 	public void clickSubmitButton() {
-		Action.click(getDriver(), SubmitButton);
+		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
+		Action.JSClick(getDriver(), SubmitButton,"Submit Button"); 
+		getDriver().switchTo().defaultContent();
+
 	}
 	
 	public boolean validateErrorMessage() {
+		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
 		return Action.isDisplayed(getDriver(), ErrorMessage);
+
 	}
 }

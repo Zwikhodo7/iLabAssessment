@@ -22,7 +22,7 @@ public class IndexPage extends BaseClass {
 	@FindBy(xpath = "//ul[@id='top-menu']//a[.='Get in Touch']")
 	WebElement GetInTouch;
 
-	@FindBy(xpath = "//a[.='Career Opportunities']")
+	@FindBy(xpath = "(//a[.='Career Opportunities'])[1]")
 	WebElement CareerOpportunities;
 	
 	@FindBy(xpath = "//button[@class='cky-btn cky-btn-reject']")
@@ -33,16 +33,15 @@ public class IndexPage extends BaseClass {
 	}
 
 	public void hoverOnGetInTouch() {
-		Action.mouseOverElement(getDriver(), GetInTouch);
-		//return new LoginPage();
+		Action.mouseOverElement(getDriver(), GetInTouch,"Get In Touch");
 	}
 	
 	public CareerPage clickCareerOpportunities() {
-		Action.click(getDriver(), CareerOpportunities);
+		Action.clickElement(CareerOpportunities,"CareerOpportunities" );
 		return new CareerPage();
 	}
 	
 	public void clickrejectCookies() {
-		Action.click(getDriver(), rejectCookies);  
+		Action.clickElement(rejectCookies,"rejectCookies");  
 	}
 }

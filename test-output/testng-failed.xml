@@ -10,9 +10,11 @@
       <class name="com.ilabassessment.testcases.CareerJourneyTest">
         <methods>
           <include name="loadConfig"/>
+          <include name="navigateToJobPost"/>
           <include name="setup"/>
           <include name="CompleteForm"/>
           <include name="tearDown"/>
+          <include name="navigateToCareer"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- com.ilabassessment.testcases.CareerJourneyTest -->

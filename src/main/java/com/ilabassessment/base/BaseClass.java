@@ -26,17 +26,11 @@ public class BaseClass {
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	// Declare ThreadLocal Driver
-	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();//public static WebDriver driver; Remember the changes that were made
-//	public ExtentHtmlReporter htmlReporter;
-//	public ExtentReports extent;
-	@BeforeSuite(groups = {"Smoke", "Sanity", "Regression"})
-	public void loadConfig() throws IOException {
-		//ExtentManager.setExtent();
-	//	 htmlReporter = new ExtentHtmlReporter("extent.html");
+	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
-			// create ExtentReports and attach reporter(s)
-		//    extent = new ExtentReports();
-		//	extent.attachReporter(htmlReporter);
+	@BeforeSuite()
+	public void loadConfig() throws IOException {
+		
 		DOMConfigurator.configure("log4j.xml");
 		
 		try {
@@ -73,17 +67,6 @@ public class BaseClass {
 			driver.set(new InternetExplorerDriver());
 		}
 			
-		//	public static void launchApp() {
-		//		WebDriverManager.chromedriver().setup();
-		//		String browserName = prop.getProperty("browser");
-		//
-		//		if(browserName.contains("Chrome")) {
-		//			driver = new ChromeDriver();
-		//		} else if(browserName.contains("FireFox")) {
-		//			driver = new FirefoxDriver();
-		//		} else if(browserName.contains("IE")) {
-		//			driver = new InternetExplorerDriver();
-		//		}
 
 		//Maximize the screen
 		getDriver().manage().window().maximize();
@@ -92,16 +75,6 @@ public class BaseClass {
 		getDriver().get(prop.getProperty("url"));
 		getDriver().manage().deleteAllCookies();
 
-//		//Delete all the cookies
-//		getDriver().manage().deleteAllCookies();
-//		//Implicit TimeOuts
-//		getDriver().manage().timeouts().implicitlyWait
-//		(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
-//		//PageLoad TimeOuts
-//		getDriver().manage().timeouts().pageLoadTimeout
-//		(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
-//		//Launching the URL
-	
 	}
 	
 	@AfterSuite
