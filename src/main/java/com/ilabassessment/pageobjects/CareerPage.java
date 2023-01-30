@@ -42,6 +42,7 @@ public class CareerPage extends BaseClass{
 		}
 	
 	public void clickSouthAfrica() {
+		Action.scrollByVisibilityOfElement(getDriver(),SouthAfrica);
 		Action.JSClick(getDriver(), SouthAfrica, "South Africa");  
 	}
 	
@@ -77,6 +78,7 @@ public class CareerPage extends BaseClass{
 	
 	public void clickSubmitButton() {
 		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
+		Action.scrollByVisibilityOfElement(getDriver(),SubmitButton);
 		Action.JSClick(getDriver(), SubmitButton,"Submit Button"); 
 		getDriver().switchTo().defaultContent();
 
@@ -84,6 +86,7 @@ public class CareerPage extends BaseClass{
 	
 	public boolean validateErrorMessage() {
 		Action.switchToFrameById(getDriver(),"hs-form-iframe-0");
+		Action.scrollByVisibilityOfElement(getDriver(),ErrorMessage);
 		return Action.isDisplayed(getDriver(), ErrorMessage);
 
 	}

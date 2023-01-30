@@ -59,10 +59,11 @@ public class CareerJourneyTest extends BaseClass{
 		careerPage.inputCellNumber();
 		Log.info("Click submit button");
 		careerPage.clickSubmitButton();
-		Thread.sleep(10000);
 		Log.info("Verify the text is the expected outcome");
 		boolean result = careerPage.validateErrorMessage();
 		Assert.assertTrue(result);
+		Thread.sleep(10000);
+
 	}
 	
 	@AfterTest()
@@ -70,8 +71,8 @@ public class CareerJourneyTest extends BaseClass{
 		getDriver().quit();
 	}
 	
-	//Scroll
-	//Extent rep Screenshots
+	
+	
 	//Multiple browsers
 	//Verify last text*
 	//WAITS*
