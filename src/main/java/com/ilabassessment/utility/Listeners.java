@@ -34,14 +34,6 @@ public class Listeners extends BaseClass implements ITestListener{
 		test.log(Status.FAIL, "Test Case:" +result.getMethod().getMethodName()+ "Is Failed" );
 		test.log(Status.FAIL, result.getThrowable());
 
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		//String destination = System.getProperty("user.dir") + "\\ScreenShots\\" + filename + "_" + dateName + ".png";
-		try {
-		//	FileUtils.copyFile(source, new File(destination));
-		} catch (Exception e) {
-			e.getMessage();
-		}
 	}
 
 
